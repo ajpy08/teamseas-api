@@ -1,0 +1,19 @@
+scalar DateTime
+
+type Donation {
+  exampleField: Int
+}
+
+input CreateDonationInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+type Query {
+  donations: [Donation]!
+  donation(id: Int!): Donation
+}
+
+type Mutation {
+  createDonation(createDonationInput: CreateDonationInput!): Donation!
+}
