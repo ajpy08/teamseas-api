@@ -8,7 +8,6 @@
 /* tslint:disable */
 /* eslint-disable */
 export class CreateDonationInput {
-    id: number;
     count: number;
     displayName: string;
     email: string;
@@ -16,6 +15,11 @@ export class CreateDonationInput {
     team?: Nullable<string>;
     message?: Nullable<string>;
     createdAt?: Nullable<DateTime>;
+}
+
+export class OrderByParams {
+    field?: Nullable<string>;
+    direction?: Nullable<string>;
 }
 
 export class Donation {
@@ -30,7 +34,7 @@ export class Donation {
 }
 
 export abstract class IQuery {
-    abstract donations(): Nullable<Donation>[] | Promise<Nullable<Donation>[]>;
+    abstract donations(orderBy?: Nullable<OrderByParams>): Nullable<Donation>[] | Promise<Nullable<Donation>[]>;
 
     abstract donation(id: number): Nullable<Donation> | Promise<Nullable<Donation>>;
 }
