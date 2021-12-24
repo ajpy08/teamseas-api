@@ -29,6 +29,7 @@ input OrderByParams {
 type Query {
   donations(orderBy: OrderByParams): [Donation]!
   donation(id: Int!): Donation
+  totalDonations: Int!
 }
 
 type Mutation {

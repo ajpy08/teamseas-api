@@ -37,6 +37,8 @@ export abstract class IQuery {
     abstract donations(orderBy?: Nullable<OrderByParams>): Nullable<Donation>[] | Promise<Nullable<Donation>[]>;
 
     abstract donation(id: number): Nullable<Donation> | Promise<Nullable<Donation>>;
+
+    abstract totalDonations(): number | Promise<number>;
 }
 
 export abstract class IMutation {
